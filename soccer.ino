@@ -50,6 +50,12 @@ MT_CTRL(2, 13, 18);
  */
 void __motor_write(struct motor mot)
 {
+  if (mot.invert) {
+    if (mot.state == HIGH)
+      mot.state = LOW:
+    else
+      mot.state = HIGH:
+  }
   ledcWrite(mot.channel, mot.pwm);
   digitalWrite(mot.dir_pin, mot.state);
 }
